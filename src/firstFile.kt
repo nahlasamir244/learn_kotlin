@@ -34,11 +34,27 @@ fun main(args: Array<String>): Unit {
     //if as expression not as statement
     var maxValue: Int = if (x > y) {
         print("x>y")
-        //the last statement is the return statement 
+        //the last statement is the return statement
         x
     } else {
         print("x<y")
         y
     }
     println("max value is $maxValue")
+
+    //when = switch : no need for break once case is true it breaks
+    //when as expression instead of value assign different times
+    var test = 10
+    var testCP: Int
+    testCP = when (test) {
+        1, 10 -> {
+            println("test is 1 or 10")
+            1
+        }
+        5, 10 -> 5
+        in 19..39 -> 9
+        !in 90..100 -> 20
+        else -> -1
+    }
+    print(testCP)
 }
