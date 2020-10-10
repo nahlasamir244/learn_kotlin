@@ -57,4 +57,45 @@ fun main(args: Array<String>): Unit {
         else -> -1
     }
     print(testCP)
+
+    //iterators
+
+    for (i in 1..4 step 1) {
+        println("hello $i")
+    }
+    var i = 1
+    while (i < 5) {
+        if (i == 2) {
+            println("break")
+            //ends the whole loop the nearest loop if there is nested loop
+            break
+        }
+        println("hello $i")
+        i++
+    }
+    i = 1
+    do {
+        println("hello $i")
+        i++
+    } while (i < 5)
+
+    //example of break outer loop using label
+    outerLoop@ for (i in 1..3) {
+        for (j in 1..3) {
+            println("$i .. $j")
+            if (i == j && i == 2) {
+                break@outerLoop
+            }
+        }
+    }
+    //continue skip only the current iteration and continue the loop
+    fun skipfiveMulinRange(range: IntRange) {
+        for (i in range) {
+            if (i % 5 == 0) {
+                continue
+            }
+            println(i)
+        }
+    }
+    skipfiveMulinRange(1..20)
 }
