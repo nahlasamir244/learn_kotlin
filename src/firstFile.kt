@@ -1,3 +1,6 @@
+//change .class name instead of fileNameKt.class to nahlaFile.class
+@file:JvmName("nahlaFile")
+
 import data.Person
 
 fun main(args: Array<String>): Unit {
@@ -98,4 +101,73 @@ fun main(args: Array<String>): Unit {
         }
     }
     skipfiveMulinRange(1..20)
+
+    fun sum(num1: Int, num2: Int): Int {
+        return num1 + num2
+    }
+    println(sum(1, 2))
+    fun sumRange(range: IntRange): Int {
+        var sum = 0
+        for (i in range) {
+            sum += i
+        }
+        return sum
+    }
+
+    fun printPrimeInRange(range: IntRange) {
+        outer@ for (i in range) {
+            for (j in 2 until i) {
+                if (i % j == 0) {
+                    continue@outer
+                }
+            }
+            println(i)
+        }
+    }
+    printPrimeInRange(5..40)
+    printInseq(n2 = 50, n1 = 30, n4 = 1)
+    var str: String = ""
+    val concatedStrings = str.concatStringsWithSpace("Hello", "my", "name", "is", "Nahla", "Samir ..")
+    println("--------------------------")
+    println(concatedStrings)
+    print("\n ---------------")
+    //infix function calling more readable
+    personObj isEven 2
 }
+
+//function as expression using = instead of return
+fun isPrime(number: Int): Boolean = number % 2 == 0
+
+//java and kotlin interoperability
+//kotlin filenameKt.class the byte code
+
+//calling java method inside kotlin code
+var name = MyClass.getHelloMessage("nahla")
+
+//default arguments if you dont override the default value
+@JvmOverloads //since java doesnt have default argument functions
+fun findVolume(length: Int, width: Int, height: Int = 10): Int = length * width * height
+
+
+//named parameters in kotlin make it easy to provide parameter to function my name ignoring the order of the argument
+fun printInseq(n1: Int, n2: Int, n3: Int = 3, n4: Int) {
+    println("========================================")
+    println(n1)
+    println(n2)
+    println(n3)
+    println(n4)
+}
+
+//extension function : enables you to extend the class functionality without declaring it or inherit the class or use decorator design pattern
+
+fun Person.isAdult() = age >= 18
+
+fun String.concatStringsWithSpace(vararg str: String): String {
+    var result = ""
+    for (element in str) result += "$element "
+    return result
+}
+
+//infix function : have single parameter increase the readability by removing . and () in calling
+
+//tailRec : optimized recursive function avoid stack overflow : out of stack memory replace recursion with iteration
