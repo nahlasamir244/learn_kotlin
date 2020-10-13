@@ -37,7 +37,7 @@ class Dog(override val abs: Int, override var name: String) : Animal(), Pet, Mum
         super<Pet>.print()
     }
 
-    //Data classes has copy() fun
+
 
 }
 
