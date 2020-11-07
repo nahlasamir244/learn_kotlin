@@ -15,5 +15,5 @@ class Test {
 }
 
 interface TestInterface {
-    fun execute(sun: Int)
+    fun execute(sum: Int)
 }
