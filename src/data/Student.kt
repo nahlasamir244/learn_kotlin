@@ -14,7 +14,8 @@ open class Student constructor(var name: String, var id: Int = -1, age: Int = 0)
 
     //secondary constructor has body , must call primary constructor
     //you cannot initialize property to secondary constructor
-    constructor(name: String, address: String) : this(name) { //init execute before secondary constructor
+    constructor(name: String, address: String) : this(name) //always refer to primary constructor
+ { //init execute before secondary constructor
 
     }
 

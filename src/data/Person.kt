@@ -1,5 +1,5 @@
 package data
-
+//all classes in kotlin are close = final in java
 class Person(var id: Int) { //constructor
     var name: String = "nahla"
     var age: Int = 30

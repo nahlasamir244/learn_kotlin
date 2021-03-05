@@ -1,9 +1,10 @@
 // == reference equality
-//Data classes has override implementation for == , toString() , has  copy() fun
+//Data classes has override implementation for == , toString() , has  copy() fun as clonable in java , === is reference equality in this case
 data class User(var name: String, var gender: Int, var job: String) { // primary constructor of data classes cannot contain parameters
 
     //static functions and properties
-companion object { //can have name or can be removed
+companion object { //can have name or can be removed and can have only one companion object in each class
+        //its an object creates at run time has all prop and fun static , can inherit class
     var count=0
         @JvmStatic
         fun printCount(){
@@ -13,6 +14,7 @@ companion object { //can have name or can be removed
 }
 
 //singleton have only one instance in whole application
+// you dont have constructor you wont use it , you have only one instance
 //singleton = static in java
 //declare objects as classes and kotlin creates a singleton object of it
 //this called a high level member object outside class

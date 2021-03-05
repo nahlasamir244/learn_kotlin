@@ -26,6 +26,7 @@ fun main(args: Array<String>): Unit {
     var pi: Float = 13.4f
     var gender: Char = 'm'
     //ranges :
+    var mychpro:CharProgression = 'a' .. 'z' step 3
     var range1 = 1..10 //[1,10]
     var range2 = 7 downTo 3 // descending order
     var range3 = 50 downTo 0 step 3
@@ -44,7 +45,7 @@ fun main(args: Array<String>): Unit {
         y
     }
     println("max value is $maxValue")
-
+    var s:Boolean = true
     //when = switch : no need for break once case is true it breaks
     //when as expression instead of value assign different times
     var test = 10
@@ -60,11 +61,14 @@ fun main(args: Array<String>): Unit {
         else -> -1
     }
     print(testCP)
-
     //iterators
-
     for (i in 1..4 step 1) {
         println("hello $i")
+    }
+    var j =0
+    while (j<10){
+        print("hello ${j}")
+        j++
     }
     var i = 1
     while (i < 5) {
@@ -114,9 +118,10 @@ fun main(args: Array<String>): Unit {
         return sum
     }
 
+
     fun printPrimeInRange(range: IntRange) {
         outer@ for (i in range) {
-            for (j in 2 until i) {
+            for (j in 2..i) {
                 if (i % j == 0) {
                     continue@outer
                 }
@@ -136,7 +141,7 @@ fun main(args: Array<String>): Unit {
 }
 
 //function as expression using = instead of return
-fun isPrime(number: Int): Boolean = number % 2 == 0
+fun isEven(number: Int): Boolean = number % 2 == 0
 
 //java and kotlin interoperability
 //kotlin filenameKt.class the byte code

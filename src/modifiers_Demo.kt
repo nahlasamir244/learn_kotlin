@@ -1,7 +1,7 @@
 //all fun and class and properties by default public
 //private : visible in same file or class (can be accessed)
 //internal : visible in same module
-//protected is not applicable for high level fun or classes
+//protected is not applicable for high level fun or classes , doesnt have a package visibility
 //------------------------------------------------------------------------------
 
 //abstract class used to provide family behavior with no implementation
@@ -19,7 +19,13 @@ abstract class Animal { // abstract class by default open
 
 class Dog(override val abs: Int, override var name: String) : Animal(), Pet, Mumble { //this is how to extend class and implement interface
     //override abstract property = initialize it's value
-    override val b: Int = 1
+    override var b: Int = 1
+        //override get and set
+    get() = field
+    set(value){
+        field=value
+    }
+
     fun test() {
         print("values are $b $c $g vs a is not visible")
     }
